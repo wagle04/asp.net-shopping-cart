@@ -85,12 +85,12 @@ public partial class user_product_desc : System.Web.UI.Page
 
             if (Request.Cookies["a"] == null)
             {
-                Response.Cookies["a"].Value = product_name.ToString() + "," + product_desc.ToString() + "," + product_price.ToString() + "," + t1.Text.ToString() + "," + product_images.ToString();
+                Response.Cookies["a"].Value = product_name.ToString() + "," + product_desc.ToString() + "," + product_price.ToString() + "," + t1.Text.ToString() + "," + product_images.ToString()+ "," + id.ToString();
                 Response.Cookies["a"].Expires = DateTime.Now.AddDays(1);
             }
             else
             {
-                Response.Cookies["a"].Value = Request.Cookies["a"].Value + "|" + product_name.ToString() + "," + product_desc.ToString() + "," + product_price.ToString() + "," +t1.Text.ToString() + "," + product_images.ToString();
+                Response.Cookies["a"].Value = Request.Cookies["a"].Value + "|" + product_name.ToString() + "," + product_desc.ToString() + "," + product_price.ToString() + "," +t1.Text.ToString() + "," + product_images.ToString() + "," + id.ToString();
                 Response.Cookies["a"].Expires = DateTime.Now.AddDays(1);
 
             }
