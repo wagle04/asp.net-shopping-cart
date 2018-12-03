@@ -11,7 +11,7 @@
          <div style="height:300px;width:600px;border-style:solid;border-width:1px;">
          
              <div style="height:300px;width:200px;float:left;border-style:solid;border-width:1px;">
-             <img src="../<%# Eval("product_images") %>" height="300" width="200" />
+                 <img src="../<%# Eval("product_images") %>" height="300" width="200" />
          </div>
        
              <div style="height:300px;width:395px;float:left;border-style:solid;border-width:1px;">
@@ -27,5 +27,7 @@
         
     </FooterTemplate>
 </asp:Repeater>
+    <br />
+    <asp:Button ID="b1" runat="server" Text="Add to cart" OnClick="b1_Click" />
 </asp:Content>
 
