@@ -15,7 +15,7 @@ public partial class user_view_cart : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         DataTable dt = new DataTable();
-        dt.Columns.AddRange(new DataColumn[5] { new DataColumn("product_name"), new DataColumn("product_desc"), new DataColumn("product_price"), new DataColumn("product_qty"), new DataColumn("product_images") });
+        dt.Columns.AddRange(new DataColumn[6] { new DataColumn("product_name"), new DataColumn("product_desc"), new DataColumn("product_price"), new DataColumn("product_qty"), new DataColumn("product_images"),new DataColumn("id") });
 
         if (Request.Cookies["a"] != null)
         {
@@ -33,7 +33,7 @@ public partial class user_view_cart : System.Web.UI.Page
                     aa[j] = strArr1[j].ToString();
 
                 }
-                dt.Rows.Add(aa[0], aa[1], aa[2], aa[3], aa[4]);
+                dt.Rows.Add(aa[0], aa[1], aa[2], aa[3], aa[4],i.ToString());
             }
         }
         d1.DataSource = dt;
