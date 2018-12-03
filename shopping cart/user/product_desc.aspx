@@ -30,7 +30,7 @@
     <br />
     <table>
         <tr>
-            <td>Enter Quantity:</td>
+            <td><asp:Label ID="l2" runat="server" Text="Enter Quantity"></asp:Label></td>
             <td><asp:TextBox ID="t1" runat="server"></asp:TextBox></td>
 
 

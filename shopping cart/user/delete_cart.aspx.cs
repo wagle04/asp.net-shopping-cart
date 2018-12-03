@@ -42,7 +42,7 @@ public partial class user_delete_cart : System.Web.UI.Page
         dt.Rows.RemoveAt(id);
         Response.Cookies["a"].Expires = DateTime.Now.AddDays(-1);
 
-        foreach(DataRow dr in dt.Rows)
+        foreach (DataRow dr in dt.Rows)
         {
             product_name = dr["product_name"].ToString();
             product_desc = dr["product_desc"].ToString();
