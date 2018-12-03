@@ -64,15 +64,15 @@ public partial class user_product_desc : System.Web.UI.Page
 
         con.Close();
 
-        if (Request.Cookies[""] == null)
+        if (Request.Cookies["a"] == null)
         {
-            Response.Cookies[""].Value = product_name.ToString() + "," + product_desc.ToString() + "," + product_price.ToString() + "," + product_qty.ToString() + "," + product_images.ToString();
-            Response.Cookies[""].Expires = DateTime.Now.AddDays(1);
+            Response.Cookies["a"].Value = product_name.ToString() + "," + product_desc.ToString() + "," + product_price.ToString() + "," + product_qty.ToString() + "," + product_images.ToString();
+            Response.Cookies["a"].Expires = DateTime.Now.AddDays(1);
         }
         else
         {
-            Response.Cookies[""].Value = Response.Cookies[""].Value+"|"+product_name.ToString() + "," + product_desc.ToString() + "," + product_price.ToString() + "," + product_qty.ToString() + "," + product_images.ToString();
-            Response.Cookies[""].Expires = DateTime.Now.AddDays(1);
+            Response.Cookies["a"].Value = Request.Cookies["a"].Value + "|" + product_name.ToString() + "," + product_desc.ToString() + "," + product_price.ToString() + "," + product_qty.ToString() + "," + product_images.ToString();
+            Response.Cookies["a"].Expires = DateTime.Now.AddDays(1);
 
         }
     }
