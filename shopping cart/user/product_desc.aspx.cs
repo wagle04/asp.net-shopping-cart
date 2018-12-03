@@ -63,17 +63,25 @@ public partial class user_product_desc : System.Web.UI.Page
         }
 
         con.Close();
-
-        if (Request.Cookies["a"] == null)
+        if (Convert.ToInt32(t1.Text) > Convert.ToInt32(product_qty))
         {
-            Response.Cookies["a"].Value = product_name.ToString() + "," + product_desc.ToString() + "," + product_price.ToString() + "," + product_qty.ToString() + "," + product_images.ToString();
-            Response.Cookies["a"].Expires = DateTime.Now.AddDays(1);
+            l1.Text = "Please enter lower quantity!!";
         }
         else
         {
-            Response.Cookies["a"].Value = Request.Cookies["a"].Value + "|" + product_name.ToString() + "," + product_desc.ToString() + "," + product_price.ToString() + "," + product_qty.ToString() + "," + product_images.ToString();
-            Response.Cookies["a"].Expires = DateTime.Now.AddDays(1);
+            l1.Text = "";
 
+            if (Request.Cookies["a"] == null)
+            {
+                Response.Cookies["a"].Value = product_name.ToString() + "," + product_desc.ToString() + "," + product_price.ToString() + "," + product_qty.ToString() + "," + product_images.ToString();
+                Response.Cookies["a"].Expires = DateTime.Now.AddDays(1);
+            }
+            else
+            {
+                Response.Cookies["a"].Value = Request.Cookies["a"].Value + "|" + product_name.ToString() + "," + product_desc.ToString() + "," + product_price.ToString() + "," + product_qty.ToString() + "," + product_images.ToString();
+                Response.Cookies["a"].Expires = DateTime.Now.AddDays(1);
+
+            }
         }
     }
 }
